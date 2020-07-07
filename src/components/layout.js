@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          description
         }
       }
     }
@@ -25,7 +26,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header
+        siteTitle={data.site.siteMetadata.title}
+        siteDescription={data.site.siteMetadata.description}
+      />
       <div
         style={{
           margin: `0 auto`,
@@ -34,10 +38,15 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
+        <footer style={{ textAlign: "center", marginTop: "50px" }}>
+          © {new Date().getFullYear()}, Developed with love by
           {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a
+            style={{ color: "blue", textDecoration: "none" }}
+            href="https://ghranek.com"
+          >
+            Ghranek
+          </a>
         </footer>
       </div>
     </>

@@ -1,0 +1,14 @@
+.pager {
+  text-align: center;
+  padding: 25px 0;
+  a {
+    text-decoration: none;
+    color: #38c;
+  }
+  .next {
+    float: right;
+  }
+  .prev {
+    float: left;
+  }
+}

@@ -1,0 +1,45 @@
+.posts {
+  margin: 0;
+  padding: 0;
+  .post {
+    list-style: none;
+    a {
+      background-color: #ffff;
+      color: #000;
+      text-decoration: none;
+      display: block;
+      &:hover {
+        background-color: #ffe8e8;
+      }
+      .img {
+        margin-bottom: 0;
+        width: 100%;
+        height: auto;
+      }
+      .content {
+        padding: 40px;
+        .label {
+          display: block;
+          margin-bottom: 15px;
+          font-size: 14px;
+          color: #555;
+          i {
+            margin-left: 5px;
+          }
+        }
+        h2 {
+          margin-bottom: 15px;
+        }
+        .meta {
+          margin-bottom: 15px;
+          font-size: 14px;
+          color: #555;
+        }
+        p {
+          color: #333;
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}

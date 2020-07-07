@@ -1,0 +1,23 @@
+.article {
+  margin-top: 80px;
+  .label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: #38c;
+      i {
+        margin-left: 5px;
+      }
+    }
+  }
+  .title {
+    margin-bottom: 50px;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+  }
+}
