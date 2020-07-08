@@ -20,4 +20,15 @@
     line-height: 40px;
     text-align: center;
   }
+  .postBody {
+    color: #545454;
+    a {
+      float: none !important;
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
 }

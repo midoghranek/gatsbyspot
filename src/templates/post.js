@@ -39,7 +39,8 @@ const PostPage = ({ data }) => {
             : post.title}
         </h1>
         <div
-          dangerouslySetInnerHTML={{ __html: post.childMarkdownRemark.html }}
+          className={styles.postBody}
+          dangerouslySetInnerHTML={{ __html: post.content }}
         ></div>
       </article>
     </Layout>
@@ -54,9 +55,7 @@ export const pageQurey = graphql`
       title
       labels
       published(formatString: "MMMM, DD, YYYY")
-      childMarkdownRemark {
-        html
-      }
+      content
     }
   }
 `

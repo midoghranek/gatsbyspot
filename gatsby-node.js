@@ -13,8 +13,9 @@ module.exports.createPages = async ({ graphql, actions }) => {
   // Templates
   const homeTemplate = path.resolve("./src/templates/home.js")
   const postTemplate = path.resolve("./src/templates/post.js")
+  const pageTemplate = path.resolve("./src/templates/page.js")
   const tagTemplate = path.resolve("./src/templates/tag.js")
-  const navigationTemplate = path.resolve("./src/templates/pagination.js")
+  const pagTemplate = path.resolve("./src/templates/pagination.js")
 
   // Fetch Data
   const res = await graphql(`
@@ -22,6 +23,12 @@ module.exports.createPages = async ({ graphql, actions }) => {
       allBloggerPost {
         distinct(field: labels)
         totalCount
+        nodes {
+          id
+          slug
+        }
+      }
+      allBloggerPage {
         nodes {
           id
           slug
@@ -60,7 +67,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   // Create navigation pages
   for (let i = 1; i <= numberOfPages; i++) {
     createPage({
-      component: navigationTemplate,
+      component: pagTemplate,
       path: `/page/${i}`,
       context: {
         limit: postsPerPage,
@@ -79,6 +86,18 @@ module.exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: post.slug,
         id: post.id,
+      },
+    })
+  })
+
+  // Create custom pages
+  res.data.allBloggerPage.nodes.forEach(page => {
+    createPage({
+      component: pageTemplate,
+      path: `/${page.slug}`,
+      context: {
+        slug: page.slug,
+        id: page.id,
       },
     })
   })

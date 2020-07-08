@@ -5,7 +5,6 @@ import Pager from "../components/pager"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Posts from "../containers/postsList"
-import "../styles/global.scss"
 
 const HomePage = ({ data, pageContext }) => {
   const posts = data.allBloggerPost.nodes
